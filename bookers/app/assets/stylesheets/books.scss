@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+.bookers {
+  padding-bottom: 5px;
+}
+
 .list-column-title {
   font-size: 14px;
   padding-left: 75px;
@@ -20,7 +24,7 @@
 .book-list {
   width: 100%;
   margin: 0 auto;
-  padding: 0 35px;
+  padding: 5px 35px;
   font-size: 13px;
 }
 
@@ -32,16 +36,81 @@
   width: 120px;
   padding-right: 20px;
   display: inline-block;
+  orverflow-wrap: normal;
 }
 
 .book-body {
   width: 280px;
   display: inline-block;
+  orverflow-wrap: normal;
+  word-break: break-all;
 }
 
-.action-link {
+.index-link {
   display: inline-block;
   color: #000;
   font-weight: normal;
   margin-left: 10px;
+}
+
+.create-box {
+  padding: 15px 35px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 14px;
+  font-weight: normal;
+  padding-top: 10px;
+}
+
+.create-buttom {
+  margin-top: 5px;
+}
+
+
+.show-box {
+  margin: 40px 70px;
+  font-size: 14px;
+}
+
+.title-box {
+  margin-top: 30px;
+}
+
+.body-box {
+  margin-top: 30px;
+}
+
+.table {
+  font-weight: bold;
+  display: inline-block;
+}
+
+.table-child {
+  display: inline-block;
+}
+
+.link-box {
+  padding-left: 40px;
+  font-size: 14px;
+}
+
+.show-link-edit {
+  display: inline-block;
+  color: #000;
+  font-weight: normal;
+}
+
+.show-link-back {
+  display: inline-block;
+  color: gray;
+  font-weight: normal;
+}
+
+.link-box span {
+  font-weight: normal;
 }

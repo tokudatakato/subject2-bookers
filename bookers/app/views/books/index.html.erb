@@ -1,4 +1,4 @@
-<h1>Books</h1>
+<h1 class="bookers">Books</h1>
 
     <span class="list-column-title">Title</span>
     <span class="list-column-body">Body</span>
@@ -10,22 +10,24 @@
       <div class="book-body"><%= book.body %></div>
     </div>
     <span class="action-link-list">
-      <%= link_to("Show", book_path(book.id), {class: "action-link"}) %>
-      <%= link_to("Edit", edit_book_path(book.id), {class: "action-link"}) %>
-      <%= link_to("Destroy", book_path(book.id), {method: :delete, class: "action-link"}) %>
+      <%= link_to("Show", book_path(book.id), {class: "action-link index-link"}) %>
+      <%= link_to("Edit", edit_book_path(book.id), {class: "action-link index-link"}) %>
+      <%= link_to("Destroy", book_path(book.id), {method: :delete, class: "action-link index-link"}) %>
     </span>
   </div>
 <% end %>
 
-<h2>New book</h2>
-<%= form_with model: @book, url: '/books', method: :post do |f| %>
-  <div class="create-box">
-    <h4>Title</h4>
-    <%= f.text_field :title %>
+<div class="create-box">
+  <h2>New book</h2>
+  <%= form_with model: @book, url: '/books', method: :post do |f| %>
+    <div class="create-book">
+      <h4>Title</h4>
+      <%= f.text_field :title %>
 
-    <h4>Body</h4>
-    <%= f.text_area :body %>
-  </div>
+       <h4>Body</h4>
+      <%= f.text_area :body %>
+    </div>
   
-  <div class="create-bottm"><%= f.submit 'Create Book' %></div>
+    <div class="create-buttom"><%= f.submit 'Create Book' %></div>
+ </div> 
 <% end %>
