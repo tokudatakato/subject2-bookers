@@ -99,18 +99,61 @@ h4 {
   font-size: 14px;
 }
 
-.show-link-edit {
+.edit-link {
   display: inline-block;
   color: #000;
   font-weight: normal;
 }
 
-.show-link-back {
+.back-link {
   display: inline-block;
   color: gray;
   font-weight: normal;
 }
 
+.show-link {
+  display: inline-block;
+  color: #000;
+  font-weight: normal;
+}
+
 .link-box span {
   font-weight: normal;
+}
+
+.edit-head {
+  padding-left: 40px;
+}
+
+.edit-box {
+  padding-left: 40px;
+}
+
+.update-bottom {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.error-box{
+  border: 2px solid red;
+  margin: 10px 0;
+}
+
+.error-head {
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  font-size: 13px;
+  padding-left: 15px;
+  font-weight:bold;
+  background-color: crimson;
+}
+
+.error-list {
+  height: 100px;
+  font-size: 12px;
+  font-weight: bold;
+  padding-top: 35px;
+  padding-left: 80px;
+  background-color: whitesmoke;
 }
