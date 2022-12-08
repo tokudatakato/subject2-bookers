@@ -5,6 +5,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "sans-serif";
 }
 
 .bookers {
@@ -44,13 +45,6 @@
   display: inline-block;
   orverflow-wrap: normal;
   word-break: break-all;
-}
-
-.index-link {
-  display: inline-block;
-  color: #000;
-  font-weight: normal;
-  margin-left: 10px;
 }
 
 .create-box {
@@ -134,7 +128,14 @@ h4 {
   padding-bottom: 10px;
 }
 
-.error-box{
+.edit-error-box{
+  width: 450px;
+  border: 2px solid red;
+  margin: 10px 40px;
+}
+
+.index-error-box{
+  width: 450px;
   border: 2px solid red;
   margin: 10px 0;
 }
@@ -143,17 +144,57 @@ h4 {
   height: 30px;
   line-height: 30px;
   color: #fff;
-  font-size: 13px;
+  font-size: 12px;
   padding-left: 15px;
   font-weight:bold;
   background-color: crimson;
 }
 
 .error-list {
-  height: 100px;
-  font-size: 12px;
-  font-weight: bold;
-  padding-top: 35px;
-  padding-left: 80px;
+  font-size: 13px;
+  padding: 30px 80px;
   background-color: whitesmoke;
+}
+
+.error-message {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.books-box {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.title-column {
+  font-size: 13px;
+  font-weight: bold;
+  margin-left: 40%;
+}
+
+.index-body-list {
+  margin-left: 10px;
+}
+
+.body-column {
+  font-size: 13px;
+  font-weight: bold;
+  margin-left: 40%;
+}
+
+.index-show-link {
+  width: 35px;
+  font-size: 13px;
+  margin-top: 24px;
+}
+
+.index-edit-link {
+  margin-left: 15px;
+}
+
+.index-link {
+  display: inline-block;
+  color: #000;
+  font-weight: normal;
+  margin-bottom: 3px;
 }

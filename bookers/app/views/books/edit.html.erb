@@ -1,13 +1,19 @@
 <h1 class="edit-head">Editing Book</h1>
 
 <% if @book.errors.any? %>
-<div class="error-box">
-  <div class="error-head">
-    <% @book.errors.count %> error prohibited this book from being saved:
-  </div>
+<div class="edit-error-box">
+  <% if @book.errors.count == 1 %>
+    <div class="error-head">
+      <%= @book.errors.count %> error prohibited this book from being saved:
+    </div>
+  <% else  @book.errors.count > 1 %>
+    <div class="error-head">
+      <%= @book.errors.count %> errors prohibited this book from being saved:
+    </div>
+  <% end %>
   <ul class="error-list">
     <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+      <li class="error-message"><%= message %></li>
     <% end %>
   </ul>
 </div>

@@ -12,7 +12,7 @@
     <span class="action-link-list">
       <%= link_to("Show", book_path(book.id), {class: "action-link index-link"}) %>
       <%= link_to("Edit", edit_book_path(book.id), {class: "action-link index-link"}) %>
-      <%= link_to("Destroy", book_path(book.id), {method: :delete, class: "action-link index-link"}) %>
+      <%= link_to("Destroy", book_path(book.id), {method: :delete, "data-confirm" => "Are you sure?", class: "action-link index-link"}) %>
     </span>
   </div>
 <% end %>
@@ -21,10 +21,17 @@
   <h2>New book</h2>
   
   <% if @book.errors.any? %>
-  <div class="error-box">
-    <div class="error-head">
-      <%= @book.errors.count %> error prohibited this book from being saved:
-    </div>  
+  <div class="index-error-box">
+    <% if @book.errors.count == 1 %>
+      <div class="error-head">
+        <%= @book.errors.count %> error prohibited this book from being saved:
+      </div>
+    <% else %>
+      <div class="error-head">
+        <%= @book.errors.count %> errors prohibited this book from being saved:
+      </div>  
+    <% end %>
+    
     <ul class="error-list">
       <% @book.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -44,3 +51,38 @@
   
     <div class="create-buttom"><%= f.submit 'Create Book' %></div>
   <% end %>
+  
+  
+<div class="books-box">  
+  <div class="index-title-box">
+    <div class="title-column">Title</div>
+    <% @books.each do |book| %>
+      <div class="book-title-list"><%= book.title %></div>
+    <% end %>
+  </div>
+  
+  <div class="index-body-list">
+    <div class="body-column">Body</div>
+    <% @books.each do |book| %>
+      <div class="book-body-list"><%= book.body %></div>
+    <% end %>
+  </div>
+  
+  <div class="index-show-link">
+    <% @books.each do |book| %>
+    <%= link_to("Show", book_path(book.id), {class: "action-link index-link"}) %>
+    <% end %>
+  </div>  
+  
+  <div class="index-show-link">
+    <% @books.each do |book| %>
+    <%= link_to("Edit", edit_book_path(book.id), {class: "action-link index-link"}) %>
+    <% end %>
+  </div>
+  
+  <div class="index-show-link">
+    <% @books.each do |book| %>
+    <%= link_to("Destroy", book_path(book.id), {method: :delete, "data-confirm" => "Are you sure?", class: "action-link index-link"}) %>
+    <% end %>
+  </div>
+</div>
