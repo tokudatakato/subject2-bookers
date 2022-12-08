@@ -1,27 +1,46 @@
 <h1 class="bookers">Books</h1>
 
-    <span class="list-column-title">Title</span>
-    <span class="list-column-body">Body</span>
-    
-<% @books.each do |book| %>
-  <div class="book-list">
-    <div class="book-comment">
-      <div class="book-title"><%= book.title %></div>
-      <div class="book-body"><%= book.body %></div>
-    </div>
-    <span class="action-link-list">
-      <%= link_to("Show", book_path(book.id), {class: "action-link index-link"}) %>
-      <%= link_to("Edit", edit_book_path(book.id), {class: "action-link index-link"}) %>
-      <%= link_to("Destroy", book_path(book.id), {method: :delete, "data-confirm" => "Are you sure?", class: "action-link index-link"}) %>
-    </span>
+<table> 
+<div class="books-box">
+  <div class="index-title-box">
+    <div class="title-column">Title</div>
+    <% @books.each do |book| %>
+      <div class="book-title-list"><%= book.title %></div>
+    <% end %>
   </div>
-<% end %>
+  
+  <div class="index-body-list">
+    <div class="body-column">Body</div>
+    <% @books.each do |book| %>
+      <div class="book-body-list"><%= book.body %></div>
+    <% end %>
+  </div>
+  
+  <div class="index-show-link">
+    <% @books.each do |book| %>
+    <%= link_to("Show", book_path(book.id), {class: "action-link index-link"}) %>
+    <% end %>
+  </div>  
+  
+  <div class="index-edit-link">
+    <% @books.each do |book| %>
+    <%= link_to("Edit", edit_book_path(book.id), {class: "action-link index-link"}) %>
+    <% end %>
+  </div>
+  
+  <div class="index-destroy-link">
+    <% @books.each do |book| %>
+    <%= link_to("Destroy", book_path(book.id), {method: :delete, "data-confirm" => "Are you sure?", class: "action-link index-link"}) %>
+    <% end %>
+  </div>
+</div>
+</table>
 
 <div class="create-box">
   <h2>New book</h2>
   
   <% if @book.errors.any? %>
-  <div class="index-error-box">
+  <div translate="no" class="index-error-box">
     <% if @book.errors.count == 1 %>
       <div class="error-head">
         <%= @book.errors.count %> error prohibited this book from being saved:
@@ -53,36 +72,3 @@
   <% end %>
   
   
-<div class="books-box">  
-  <div class="index-title-box">
-    <div class="title-column">Title</div>
-    <% @books.each do |book| %>
-      <div class="book-title-list"><%= book.title %></div>
-    <% end %>
-  </div>
-  
-  <div class="index-body-list">
-    <div class="body-column">Body</div>
-    <% @books.each do |book| %>
-      <div class="book-body-list"><%= book.body %></div>
-    <% end %>
-  </div>
-  
-  <div class="index-show-link">
-    <% @books.each do |book| %>
-    <%= link_to("Show", book_path(book.id), {class: "action-link index-link"}) %>
-    <% end %>
-  </div>  
-  
-  <div class="index-show-link">
-    <% @books.each do |book| %>
-    <%= link_to("Edit", edit_book_path(book.id), {class: "action-link index-link"}) %>
-    <% end %>
-  </div>
-  
-  <div class="index-show-link">
-    <% @books.each do |book| %>
-    <%= link_to("Destroy", book_path(book.id), {method: :delete, "data-confirm" => "Are you sure?", class: "action-link index-link"}) %>
-    <% end %>
-  </div>
-</div>
